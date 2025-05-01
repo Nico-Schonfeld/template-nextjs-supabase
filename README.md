@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plantilla Next.js 15 + Supabase
 
-## Getting Started
+Una plantilla moderna para construir aplicaciones full-stack con Next.js 15, Supabase, integración de MercadoPago y más.
 
-First, run the development server:
+## Características Principales
+
+### Autenticación y Base de Datos Supabase
+- Autenticación incorporada con Supabase
+- Gestión de base de datos a través de Supabase
+- Almacenamiento y recuperación segura de datos
+- Capacidades en tiempo real
+- Rutas protegidas con middleware
+
+### Integración de MercadoPago
+- Integración lista para usar del SDK de MercadoPago
+- Configuración de procesamiento de pagos en `/services/mercadopago.services.ts`
+- Manejo de webhooks en `/app/api/MercadoPago/route.ts`
+- Implementación segura del flujo de pagos
+
+### Componentes UI/UX
+- Biblioteca de componentes Shadcn/UI
+  - Componentes reutilizables para botones, formularios, tarjetas, etc.
+  - Estilos modernos y atractivos
+  - Fácil integración con Next.js
+- Modo Oscuro/Claro con next-themes
+  - Funcionalidad de cambio de tema
+  - Colores y estilos personalizables
+- TailwindCSS para estilos
+  - Framework CSS basado en utilidades
+  - Creación rápida de diseños personalizados
+
+## Stack Tecnológico
+- Next.js 15
+- TypeScript
+- Supabase
+- MercadoPago
+- Shadcn/UI
+- TailwindCSS
+- next-themes
+
+## Instrucciones de uso
+
+Te invito a que añadas o elimines módulos según tus necesidades. Modifica todo el código que desees y utiliza esta plantilla como base para crear tu mejor proyecto.
+
+## Instalación
+
+Clona el repositorio:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/Nico-Schonfeld/template-nextjs-supabase.git
+  cd template-nextjs-supabase
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Instala las dependencias:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Levanta el proyecto:
 
-## Learn More
+```bash
+  npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Autor
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [@nicoschonfeld](https://www.linkedin.com/in/nicoschonfeld/)
