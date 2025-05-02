@@ -29,11 +29,11 @@ export const signUpAction = async (formData: FormData) => {
 
   // Validar edad
   const ageNum = parseInt(age);
-  if (isNaN(ageNum) || ageNum < 18 || ageNum > 120) {
+  if (isNaN(ageNum) || ageNum < 18) {
     return encodedRedirect(
       "error",
       "/sign-up",
-      "La edad debe estar entre 18 y 120 años"
+      "La edad debe ser mayor o igual a 18 años"
     );
   }
 
