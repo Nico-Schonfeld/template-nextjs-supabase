@@ -10,7 +10,6 @@ export const signUpAction = async (formData: FormData) => {
   const password = formData.get("password")?.toString();
   const age = formData.get("age")?.toString();
 
-
   const supabase = await createClient();
   const origin = (await headers()).get("origin");
 
@@ -23,8 +22,12 @@ export const signUpAction = async (formData: FormData) => {
   }
 
   // Validar campos adicionales
-  if (!age ) {
-    return encodedRedirect("error", "/sign-up", "Todos los campos son requeridos");
+  if (!age) {
+    return encodedRedirect(
+      "error",
+      "/sign-up",
+      "Todos los campos son requeridos"
+    );
   }
 
   // Validar edad
@@ -44,7 +47,6 @@ export const signUpAction = async (formData: FormData) => {
       emailRedirectTo: `${origin}/auth/callback`,
       data: {
         age: ageNum,
-      
       },
     },
   });
@@ -85,7 +87,11 @@ export const forgotPasswordAction = async (formData: FormData) => {
   const callbackUrl = formData.get("callbackUrl")?.toString();
 
   if (!email) {
-    return encodedRedirect("error", "/forgot-password", "El correo es requerido");
+    return encodedRedirect(
+      "error",
+      "/forgot-password",
+      "El correo es requerido"
+    );
   }
 
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
@@ -146,7 +152,11 @@ export const resetPasswordAction = async (formData: FormData) => {
     );
   }
 
-  encodedRedirect("success", `/${process.env.NEXT_PUBLIC_ROUTE_MAIN}/reset-password`, "Contraseña actualizada");
+  encodedRedirect(
+    "success",
+    `/${process.env.NEXT_PUBLIC_ROUTE_MAIN}/reset-password`,
+    "Contraseña actualizada"
+  );
 };
 
 export const signOutAction = async () => {
@@ -220,7 +230,7 @@ export const getAllUsersAction = async () => {
   const supabase = await createClient();
 
   try {
-    const { data: users, error } = await supabase.from("profiles").select(`*`);
+    const { data: users, error } = await supabase.from("users").select("*");
 
     if (error) {
       console.error("Error al obtener usuarios:", error.message);

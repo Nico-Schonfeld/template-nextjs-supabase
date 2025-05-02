@@ -8,6 +8,7 @@ import React from "react";
 
 const SignInPage = async (props: { searchParams: Promise<Message> }) => {
   const searchParams = await props.searchParams;
+
   return (
     <form className="flex flex-col min-w-64 max-w-64 mx-auto h-screen justify-center">
       <h1 className="text-2xl font-medium">Iniciar sesión</h1>
